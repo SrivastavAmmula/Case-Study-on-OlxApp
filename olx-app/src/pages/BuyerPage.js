@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
+import BuyerImage from "../components/Buyer.jpg";
 
 const BuyerPage = () => {
   const [categories, setCategories] = useState([]);
@@ -16,7 +17,6 @@ const BuyerPage = () => {
     axios
       .get("http://localhost:5092/api/Category/AllCategories")
       .then((response) => {
-        console.log(response.data);
         setCategories(response.data);
       })
       .catch((error) => {
@@ -157,98 +157,112 @@ const BuyerPage = () => {
 
   return (
     <div className="container mt-4">
-      <h1 className="mb-4">Buyer Page</h1>
-      <div className="mb-3">
-        <label className="form-label">Select Category:</label>
-        <select
-          className="form-select"
-          value={selectedCategory}
-          onChange={handleCategoryChange}
-        >
-          <option value="">-- Select Category --</option>
-          {categories.map((category) => (
-            <option key={category.categoryId} value={category.categoryId}>
-              {category.categooryName} {/* Corrected property name */}
-            </option>
-          ))}
-        </select>
-      </div>
+      <div className="row">
+        {/* Image Column */}
+        <div className="col-md-6">
+          <img src={BuyerImage} className="img-fluid" alt="Buyer" />
+        </div>
 
-      {selectedCategory && (
-        <div className="mb-3">
-          <label className="form-label">Select Product:</label>
-          {products.map((product) => (
-            <div key={product.productId} className="form-check">
-              <input
-                type="radio"
-                id={product.productId}
-                name="product"
-                value={product.productId}
-                onChange={handleProductChange}
-                className="form-check-input"
-              />
-              <label htmlFor={product.productId} className="form-check-label">
-                {product.productName}
-              </label>
+        {/* Buyer Functionality Column */}
+        <div className="col-md-6">
+          <h1 className="mb-4">Buyer Page</h1>
+
+          <div className="mb-3">
+            <label className="form-label">Select Category:</label>
+            <select
+              className="form-select"
+              value={selectedCategory}
+              onChange={handleCategoryChange}
+            >
+              <option value="">-- Select Category --</option>
+              {categories.map((category) => (
+                <option key={category.categoryId} value={category.categoryId}>
+                  {category.categooryName} {/* Corrected property name */}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          {selectedCategory && (
+            <div className="mb-3">
+              <label className="form-label">Select Product:</label>
+              {products.map((product) => (
+                <div key={product.productId} className="form-check">
+                  <input
+                    type="radio"
+                    id={product.productId}
+                    name="product"
+                    value={product.productId}
+                    onChange={handleProductChange}
+                    className="form-check-input"
+                  />
+                  <label
+                    htmlFor={product.productId}
+                    className="form-check-label"
+                  >
+                    {product.productName}
+                  </label>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      )}
+          )}
 
-      {orderData && (
-        <div className="card mb-4">
-          <div className="card-body">
-            <h2 className="card-title">Product Details</h2>
-            <p>
-              <strong>Name:</strong> {orderData.productName}
-            </p>
-            <p>
-              <strong>Description:</strong> {orderData.description}
-            </p>
-            <p>
-              <strong>Location:</strong> {orderData.location}
-            </p>
-            <p>
-              <strong>Price:</strong> ${orderData.price}
-            </p>
+          {orderData && (
+            <div className="card mb-4">
+              <div className="card-body">
+                <h2 className="card-title">Product Details</h2>
+                <p>
+                  <strong>Name:</strong> {orderData.productName}
+                </p>
+                <p>
+                  <strong>Description:</strong> {orderData.description}
+                </p>
+                <p>
+                  <strong>Location:</strong> {orderData.location}
+                </p>
+                <p>
+                  <strong>Price:</strong> ${orderData.price}
+                </p>
 
-            <button className="btn btn-primary" onClick={handlePlaceOrder}>
-              Place Order
-            </button>
-          </div>
-        </div>
-      )}
+                <button className="btn btn-primary" onClick={handlePlaceOrder}>
+                  Place Order
+                </button>
+              </div>
+            </div>
+          )}
 
-      {orderId && (
-        <div className="mb-3">
-          <button
-            className="btn btn-secondary"
-            onClick={handleViewOrderDetails}
-          >
-            View Order Details
-          </button>
-        </div>
-      )}
+          {orderId && (
+            <div className="mb-3">
+              <button
+                className="btn btn-secondary"
+                onClick={handleViewOrderDetails}
+              >
+                View Order Details
+              </button>
+            </div>
+          )}
 
-      {orderDetails && (
-        <div className="card">
-          <div className="card-body">
-            <h2 className="card-title">Order Details</h2>
-            <p>
-              <strong>Order ID:</strong> {orderDetails.orderId}
-            </p>
-            <p>
-              <strong>Product Name:</strong> {orderData.productName}
-            </p>
-            <p>
-              <strong>Total Price:</strong> ${orderData.price}
-            </p>
-            <p>
-              <strong>Status:</strong> Transaction completed successfully
-            </p>
-          </div>
+          {orderDetails && (
+            <div className="card">
+              <div className="card-body">
+                <h2 className="card-title">Order Details</h2>
+                <p>
+                  <strong>Order ID:</strong> {orderDetails.orderId}
+                </p>
+                <p>
+                  <strong>Product Name:</strong> {orderData.productName}
+                </p>
+                <p>
+                  <strong>Total Price:</strong> ${orderData.price}
+                </p>
+                <p>
+                  <strong>Status:</strong> Transaction completed successfully
+                </p>
+              </div>
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 };

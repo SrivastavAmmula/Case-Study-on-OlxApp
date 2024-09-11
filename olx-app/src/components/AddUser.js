@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import RegisterImage from "../components/Register.jpg";
 
 const AddUser = () => {
     const [userId, setUserId] = useState('');
@@ -27,73 +28,79 @@ const AddUser = () => {
 
     return (
         <div className="container mt-5">
-            <h2 className="text-center mb-4">Add User</h2>
-            <form onSubmit={handleSubmit} className="col-md-6 mx-auto">
-                <div className="form-group mb-3">
-                    <label htmlFor="userId">User Id</label>
-                    <input 
-                        type="text"
-                        className="form-control"
-                        id="userId"
-                        placeholder="Enter User Id"
-                        value={userId}
-                        onChange={(e) => setUserId(e.target.value)}
-                    />
+            <div className="row">
+                <div className="col-md-6">
+                    <img src={RegisterImage} alt="Register" className="img-fluid" />
                 </div>
-                
-                <div className="form-group mb-3">
-                    <label htmlFor="userName">User Name</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        id="userName"
-                        placeholder="Enter User Name"
-                        value={userName}
-                        onChange={(e) => setUserName(e.target.value)}
-                    />
-                </div>
+                <div className="col-md-6">
+                    <h2 className="text-center mb-4">Registration</h2>
+                    <form onSubmit={handleSubmit}>
+                        <div className="form-group mb-3">
+                            <label htmlFor="userId">User Id</label>
+                            <input 
+                                type="text"
+                                className="form-control"
+                                id="userId"
+                                placeholder="Enter User Id"
+                                value={userId}
+                                onChange={(e) => setUserId(e.target.value)}
+                            />
+                        </div>
+                        
+                        <div className="form-group mb-3">
+                            <label htmlFor="userName">User Name</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="userName"
+                                placeholder="Enter User Name"
+                                value={userName}
+                                onChange={(e) => setUserName(e.target.value)}
+                            />
+                        </div>
 
-                <div className="form-group mb-3">
-                    <label htmlFor="userEmail">Email</label>
-                    <input
-                        type="email"
-                        className="form-control"
-                        id="userEmail"
-                        placeholder="Enter Email"
-                        value={userEmail}
-                        onChange={(e) => setUserEmail(e.target.value)}
-                    />
-                </div>
+                        <div className="form-group mb-3">
+                            <label htmlFor="userEmail">Email</label>
+                            <input
+                                type="email"
+                                className="form-control"
+                                id="userEmail"
+                                placeholder="Enter Email"
+                                value={userEmail}
+                                onChange={(e) => setUserEmail(e.target.value)}
+                            />
+                        </div>
 
-                <div className="form-group mb-3">
-                    <label htmlFor="password">Password</label>
-                    <input
-                        type="password"
-                        className="form-control"
-                        id="password"
-                        placeholder="Enter Password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </div>
+                        <div className="form-group mb-3">
+                            <label htmlFor="password">Password</label>
+                            <input
+                                type="password"
+                                className="form-control"
+                                id="password"
+                                placeholder="Enter Password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                        </div>
 
-                <div className="form-group mb-3">
-                    <label htmlFor="role">Role</label>
-                    <select 
-                        className="form-control"
-                        id="role"
-                        value={role}
-                        onChange={(e) => setRole(e.target.value)}
-                    >
-                        <option value="">Select Role</option>
-                        <option value="Admin">Admin</option>
-                        <option value="User">User</option>
-                        {/* <option value="Buyer">Buyer</option> */}
-                    </select>
-                </div>
+                        <div className="form-group mb-3">
+                            <label htmlFor="role">Role</label>
+                            <select 
+                                className="form-control"
+                                id="role"
+                                value={role}
+                                onChange={(e) => setRole(e.target.value)}
+                            >
+                                <option value="">Select Role</option>
+                                <option value="Admin">Admin</option>
+                                <option value="User">User</option>
+                            </select>
+                        </div>
 
-                <button type="submit" className="btn btn-primary w-100">Add User</button>
-            </form>
+                        <button type="submit" className="btn btn-primary w-100">Register</button>
+                    </form>
+                </div>
+            </div>
         </div>
     );
 };

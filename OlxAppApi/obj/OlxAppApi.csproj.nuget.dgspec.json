@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sriva\\OneDrive\\Desktop\\Case study on OLX\\Case study on OLX\\OlxAppApi\\OlxAppApi.csproj": {}
+    "D:\\Fint\\Case study on OlxApp\\Case-Study-on-OlxApp\\OlxAppApi\\OlxAppApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sriva\\OneDrive\\Desktop\\Case study on OLX\\Case study on OLX\\OlxAppApi\\OlxAppApi.csproj": {
+    "D:\\Fint\\Case study on OlxApp\\Case-Study-on-OlxApp\\OlxAppApi\\OlxAppApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sriva\\OneDrive\\Desktop\\Case study on OLX\\Case study on OLX\\OlxAppApi\\OlxAppApi.csproj",
+        "projectUniqueName": "D:\\Fint\\Case study on OlxApp\\Case-Study-on-OlxApp\\OlxAppApi\\OlxAppApi.csproj",
         "projectName": "OlxAppApi",
-        "projectPath": "C:\\Users\\sriva\\OneDrive\\Desktop\\Case study on OLX\\Case study on OLX\\OlxAppApi\\OlxAppApi.csproj",
+        "projectPath": "D:\\Fint\\Case study on OlxApp\\Case-Study-on-OlxApp\\OlxAppApi\\OlxAppApi.csproj",
         "packagesPath": "C:\\Users\\sriva\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sriva\\OneDrive\\Desktop\\Case study on OLX\\Case study on OLX\\OlxAppApi\\obj\\",
+        "outputPath": "D:\\Fint\\Case study on OlxApp\\Case-Study-on-OlxApp\\OlxAppApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

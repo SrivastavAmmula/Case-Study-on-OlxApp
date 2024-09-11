@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OlxAppApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82044a4c22f60e5d60d55b992ed47a0b5e79740f")]
 [assembly: System.Reflection.AssemblyProductAttribute("OlxAppApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OlxAppApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
