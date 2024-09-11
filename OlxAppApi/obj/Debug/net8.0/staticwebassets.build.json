@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "AdRjSYStwAU20y+mmv3uvWqBXIOg44fg6XDZy+WDuWA=",
+  "Source": "OlxAppApi",
+  "BasePath": "_content/OlxAppApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
